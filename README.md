@@ -1,6 +1,6 @@
-# TURN Server
+# Coturn Server
 
-A simple Coturn based TURN server.
+Dockerized Coturn Server.
 
 ## Getting Started
 
