@@ -1,5 +1,5 @@
 [![Docker Build](https://img.shields.io/docker/cloud/build/bloodhunterd/coturn?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/coturn)
-[![License](https://img.shields.io/github/license/bloodhunterd/coturn?style=for-the-badge)](https://github.com/bloodhunterd/coturn/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/bloodhunterd/coturn-docker?style=for-the-badge)](https://github.com/bloodhunterd/coturn-docker/blob/master/LICENSE)
 
 # Coturn Server
 
