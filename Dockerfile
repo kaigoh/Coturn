@@ -17,6 +17,8 @@ RUN apt-get install -y --no-install-recommends \
 	apt-utils \
 	ca-certificates \
     dnsutils \
+	gettext-base \
+    logrotate \
     syslog-ng \
     unattended-upgrades
 
