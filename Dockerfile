@@ -1,8 +1,8 @@
 FROM debian:stable-slim
 
-ENV REALM='example.com'
-ENV SECRET='4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv'
-ENV CIPHER='EECDH+AESGCM:EDH+AESGCM'
+ENV REALM=example.com
+ENV SECRET=4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv
+ENV CIPHER=ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384
 
 EXPOSE 3478
 EXPOSE 5349
@@ -28,8 +28,8 @@ RUN apt-get install -y --no-install-recommends \
 RUN apt-get install -y --no-install-recommends \
     coturn
 
-COPY ./etc/turnserver.conf /etc/
+COPY ./etc /etc/
 
-COPY ./start.sh /
+COPY ./start.sh /start.sh
 
 ENTRYPOINT ["bash", "/start.sh"]

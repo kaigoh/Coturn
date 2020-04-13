@@ -4,9 +4,9 @@ services:
   coturn:
     image: bloodhunterd/coturn
     environment:
-      - CIPHER: EECDH+AESGCM:EDH+AESGCM
-      - REALM: example.com
-      - SECRET: 4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv
+      CIPHER: ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384
+      REALM: example.com
+      SECRET: 4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv
     ports:
       - 3478:3478
       - 5349:5349
