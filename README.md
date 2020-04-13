@@ -45,4 +45,4 @@ Please note the [changelog](https://github.com/bloodhunterd/coturn-docker/blob/m
 
 ## License
 
-This project is licensed under the Unlicense - see [LICENSE.md](https://github.com/bloodhunterd/coturn-docker/blob/master/LICENSE) file for details.
+This project is licensed under the MIT - see [LICENSE.md](https://github.com/bloodhunterd/coturn-docker/blob/master/LICENSE) file for details.
