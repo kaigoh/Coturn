@@ -1,28 +1,35 @@
 FROM debian:stable-slim
 
-ENV TZ=Europe/Berlin
-ENV LOCALE="de_DE.UTF-8 UTF-8"
+ENV REALM='example.com'
+ENV SECRET='4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv'
+ENV CIPHER='EECDH+AESGCM:EDH+AESGCM'
 
 EXPOSE 3478
 EXPOSE 5349
 
-# Update and upgrade package repositories
-RUN apt-get update && apt-get upgrade -y --no-install-recommends
+# Update sources and preinstalled packages
+RUN apt-get update && \
+    apt-get upgrade -y --no-install-recommends
 
-# Install system packages
+# Install dependencies
 RUN apt-get install -y --no-install-recommends \
+    apt-listchanges \
 	apt-utils \
-    locales \
-    unattended-upgrades \
-    apt-listchanges
-
-# Install application packages
-RUN apt-get install -y --no-install-recommends \
-    ca-certificates \
-    openssl \
+	ca-certificates \
     dnsutils \
+    syslog-ng \
+    unattended-upgrades
+
+# Install OpenSSL
+RUN apt-get install -y --no-install-recommends \
+    openssl
+
+# Install Coturn
+RUN apt-get install -y --no-install-recommends \
     coturn
+
+COPY ./etc/turnserver.conf /etc/
 
 COPY ./start.sh /
 
-ENTRYPOINT ["/bin/bash", "/start.sh"]
+ENTRYPOINT ["bash", "/start.sh"]

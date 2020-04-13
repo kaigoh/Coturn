@@ -1,17 +1,17 @@
-version: '3.7'
+version: '3'
 
 services:
-  turn-server:
-    image: bytearts/turn-server
+  coturn:
+    image: bloodhunterd/coturn
+    environment:
+      - CIPHER: EECDH+AESGCM:EDH+AESGCM
+      - REALM: example.com
+      - SECRET: 4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv
     ports:
       - 3478:3478
-      # Encrypted port (TLS)
-#     - 5349:5349
+      - 5349:5349
     volumes:
-      - ./turnserver.conf:/etc/turnserver.conf:ro
-      # DH params - generate with 4096 bit to improve security
-#     - ./dhparams.pem:/etc/ssl/private/dhparams.pem:ro
-      # Private key and certificate needed for encryption (TLS)
-#     - ./ssl_key.pem:/etc/ssl/private/key.pem:ro
-#     - ./ssl_cert.pem:/etc/ssl/private/cert.pem:ro
+      - ./cert.pem:/etc/ssl/private/cert.pem:ro
+      - ./key.pem:/etc/ssl/private/key.pem:ro
+      - ./dhparams.pem:/etc/ssl/private/dhparams.pem:ro
     restart: unless-stopped

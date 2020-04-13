@@ -1,10 +1,23 @@
 #!/bin/bash
 
-# Set timezone
-ln -snf "/usr/share/zoneinfo/${TZ}" etc/localtime && echo "${TZ}" > /etc/timezone
+# Get config files
+r=()
+r+=("$(find /etc -type f -name 'turnserver.conf')")
 
-# Set locales
-echo "${LOCALE}" >> /etc/locale.gen && locale-gen
+# Replace environment vars
+for d in "${r[@]}"
+do
+	for f in $d
+	do
+		# Replace only if not mounted as read-only
+		if [ -w "$f" ]
+		then
+			t="$f.tmp"
+			mv $f $t
+			envsubst < $t > $f
+			rm $t
+		fi
+	done
+done
 
-# Start TURN server
 /usr/bin/turnserver
