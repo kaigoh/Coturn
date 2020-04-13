@@ -14,7 +14,7 @@ See example [Docker Compose file](https://github.com/bloodhunterd/coturn-docker/
 
 | ENV | Values¹ | Default | Description
 |--- |--- |--- | ---
-| CIPHER | *Any valid cipher* | EECDH+AESGCM:EDH+AESGCM | Encryption cipher methods
+| CIPHER | *Any valid cipher* | ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256 | Encryption cipher methods
 | REALM | *FQDN* | example.com | Domain to handle connections for
 | SECRET | *Any strong secret* | 4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv | Secret to prevent unauthorized connection
 
