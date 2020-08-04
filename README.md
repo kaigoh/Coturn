@@ -18,16 +18,16 @@ See example [Docker Compose file](https://github.com/bloodhunterd/coturn-docker/
 | REALM | *FQDN* | example.com | Domain to handle connections for
 | SECRET | *Any strong secret* | 4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv | Secret to prevent unauthorized connection
 
-¹ *Possible values are separated by a slash or a range is indicated by a dash.*
+¹ *Possible values are separated by a slash. A range is indicated by a dash.*
 
 ### Volumes
 
-```bash
-volumes:
-  - ./cert.pem:/etc/ssl/private/cert.pem:ro
-  - ./key.pem:/etc/ssl/private/key.pem:ro
-  - ./dhparams.pem:/etc/ssl/private/dhparams.pem:ro
-```
+| Volume | Path | Read only | Description
+|--- |--- |--- |---
+| Certificate | /etc/ssl/private/cert.pem | &#10003; | SSL certificate file
+| Certificate key | /etc/ssl/private/key.pem | &#10003; | SSL certificate key file
+| DH parameters | /etc/ssl/private/dhparams.pem | &#10003; | DH parameters file
+| Database | /var/lib/turn/turndb | &#10007; | SQLite database file
 
 ## Update
 

@@ -13,18 +13,18 @@ RUN apt-get update && \
 
 # Install dependencies
 RUN apt-get install -y --no-install-recommends \
-    apt-listchanges \
-	apt-utils \
 	ca-certificates \
     dnsutils \
 	gettext-base \
-    logrotate \
+    libsqlite3-dev \
+    openssl \
+    sqlite3 \
     syslog-ng \
     unattended-upgrades
 
-# Install OpenSSL
-RUN apt-get install -y --no-install-recommends \
-    openssl
+# Create SQLite database
+RUN mkdir -p /var/lib/turn && \
+    sqlite3 /var/lib/turn/turndb
 
 # Install Coturn
 RUN apt-get install -y --no-install-recommends \
