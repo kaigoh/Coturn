@@ -1,9 +1,8 @@
-version: '3'
+version: '2.4'
 
 services:
   coturn:
     image: bloodhunterd/coturn
-    container_name: coturn
     environment:
       CIPHER: EECDH+AESGCM:EDH+AESGCM
       REALM: example.com
