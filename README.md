@@ -1,16 +1,16 @@
-[![Release](https://img.shields.io/github/v/release/bloodhunterd/coturn-docker?include_prereleases&style=for-the-badge)](https://github.com/bloodhunterd/coturn-docker/releases)
+[![Release](https://img.shields.io/github/v/release/bloodhunterd/coturn?include_prereleases&style=for-the-badge)](https://github.com/bloodhunterd/coturn/releases)
 [![Docker Build](https://img.shields.io/docker/cloud/build/bloodhunterd/coturn?style=for-the-badge)](https://hub.docker.com/r/bloodhunterd/coturn)
-[![License](https://img.shields.io/github/license/bloodhunterd/coturn-docker?style=for-the-badge)](https://github.com/bloodhunterd/coturn-docker/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/bloodhunterd/coturn?style=for-the-badge)](https://github.com/bloodhunterd/coturn/blob/master/LICENSE)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P51U5SZ)
 
 # Coturn
 
-Docker image of the TURN and STUN Server Coturn.
+Docker image of the TURN and STUN server Coturn.
 
 ## Configuration
 
-See example [Docker Compose file](https://github.com/bloodhunterd/coturn-docker/blob/master/docker-compose.yml).
+See example [Docker Compose file](https://github.com/bloodhunterd/coturn/blob/master/docker-compose.yml).
 
 ### Environment
 
@@ -43,7 +43,7 @@ See example [Docker Compose file](https://github.com/bloodhunterd/coturn-docker/
 
 ## Update
 
-Please note the [changelog](https://github.com/bloodhunterd/coturn-docker/blob/master/CHANGELOG.md) to check for configuration changes before updating.
+Please note the [changelog](https://github.com/bloodhunterd/coturn/blob/master/CHANGELOG.md) to check for configuration changes before updating.
 
 ## Build With
 
@@ -57,4 +57,4 @@ Please note the [changelog](https://github.com/bloodhunterd/coturn-docker/blob/m
 
 ## License
 
-This project is licensed under the MIT - see [LICENSE.md](https://github.com/bloodhunterd/coturn-docker/blob/master/LICENSE) file for details.
+This project is licensed under the MIT - see [LICENSE.md](https://github.com/bloodhunterd/coturn/blob/master/LICENSE) file for details.
