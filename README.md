@@ -1,5 +1,5 @@
 [![Release](https://img.shields.io/github/v/release/bloodhunterd/coturn?include_prereleases&style=for-the-badge)](https://github.com/bloodhunterd/coturn/releases)
-[![Docker](https://img.shields.io/github/workflow/status/bloodhunterd/coturn/Docker?style=for-the-badge&label=Docker%20Build)](https://github.com/bloodhunterd/backup/actions?query=workflow%3ADocker)
+[![Docker](https://img.shields.io/github/workflow/status/bloodhunterd/coturn/Docker?style=for-the-badge&label=Docker%20Build)](https://github.com/bloodhunterd/coturn/actions?query=workflow%3ADocker)
 [![License](https://img.shields.io/github/license/bloodhunterd/coturn?style=for-the-badge)](https://github.com/bloodhunterd/coturn/blob/master/LICENSE)
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/P5P51U5SZ)
