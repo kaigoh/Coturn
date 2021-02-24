@@ -1,37 +1,61 @@
+# This file ist part of the Coturn project, see https://github.com/bloodhunterd/Coturn.
+# © 2021 BloodhunterD <bloodhunterd@bloodhunterd.com>
+
 FROM debian:stable-slim
 
+# ===================================================
+# Environment vars
+# ===================================================
+
+ENV CIPHER=EECDH+AESGCM:EDH+AESGCM
 ENV REALM=example.com
 ENV SECRET=4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv
-ENV CIPHER=EECDH+AESGCM:EDH+AESGCM
+
+# ===================================================
+# Ports
+# ===================================================
 
 EXPOSE 3478
 EXPOSE 5349
 
-# Update sources and preinstalled packages
+# ===================================================
+# Base packages
+# ===================================================
+
 RUN apt-get update && \
     apt-get upgrade -y --no-install-recommends
-
-# Install dependencies
 RUN apt-get install -y --no-install-recommends \
-	ca-certificates \
-    dnsutils \
+    apt-listchanges \
+    apt-transport-https \
+    ca-certificates \
 	gettext-base \
-    libsqlite3-dev \
-    openssl \
-    sqlite3 \
-    syslog-ng \
     unattended-upgrades
 
-# Create SQLite database
+# ===================================================
+# SQLite
+# ===================================================
+
+RUN apt-get install -y --no-install-recommends \
+    libsqlite3-dev \
+    sqlite3
 RUN mkdir -p /var/lib/turn && \
     sqlite3 /var/lib/turn/turndb
 
-# Install Coturn
+# ===================================================
+# Coturn
+# ===================================================
+
 RUN apt-get install -y --no-install-recommends \
     coturn
 
-COPY ./etc /etc/
+# ===================================================
+# Filesystem
+# ===================================================
 
-COPY ./start.sh /start.sh
+COPY ./src/ /
+
+# ===================================================
+# Entrypoint
+# ===================================================
 
 ENTRYPOINT ["bash", "/start.sh"]
