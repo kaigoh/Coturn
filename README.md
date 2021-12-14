@@ -37,7 +37,7 @@ services:
 
 | ENV | Values | Default | Description
 | --- | ------- | ------- | -----------
-| CIPHER | *Any valid cipher* | EECDH+AESGCM:EDH+AESGCM | Encryption cipher methods.
+| CIPHER | *Any valid cipher* | !aNULL:!eNULL:HIGH:@STRENGTH@SECLEVEL=3 | Encryption cipher methods.
 | REALM | *FQDN* | example.com | Domain to handle connections for.
 | SECRET | *Any strong secret* | 4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv | Secret to prevent unauthorized connection.
 
@@ -56,9 +56,6 @@ services:
 | Certificate key | /etc/ssl/private/key.pem | &#10004; | SSL certificate key file.
 | DH parameters | /etc/ssl/private/dhparams.pem | &#10004; | DH parameters file.
 | Database | /var/lib/turn/turndb | &#10008; | SQLite database file.
-
-| &#10004; Yes | &#10008; No
-| ------------ | -----------
 
 ## Update
 

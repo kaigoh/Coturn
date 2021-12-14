@@ -7,9 +7,9 @@ FROM debian:stable-slim
 # Environment vars
 # ===================================================
 
-ENV CIPHER=EECDH+AESGCM:EDH+AESGCM
-ENV REALM=example.com
-ENV SECRET=4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv
+ENV CIPHER='!aNULL:!eNULL:HIGH:@STRENGTH@SECLEVEL=3'
+ENV REALM='example.com'
+ENV SECRET='4oeYv4QP1jMD95OyZL9q85j9vFZBjVFv'
 
 # ===================================================
 # Ports
