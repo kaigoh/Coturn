@@ -33,6 +33,8 @@ services:
 
 *Note: Change the **SECRET** to improve security.*
 
+*Note: You can also specify "EXTERNAL_IP" as an environment variable, however the container tries to detect your external address automatically (using http://ifconfig.io).*
+
 ### Configuration
 
 | ENV | Values | Default | Description

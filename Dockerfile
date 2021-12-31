@@ -29,7 +29,8 @@ RUN apt-get install -y --no-install-recommends \
     apt-transport-https \
     ca-certificates \
 	gettext-base \
-    unattended-upgrades
+    unattended-upgrades \
+    curl
 
 # ===================================================
 # SQLite
